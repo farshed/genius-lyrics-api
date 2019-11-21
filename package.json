@@ -1,7 +1,7 @@
 {
 	"name": "genius-lyrics-api",
 	"version": "1.0.1",
-	"main": "index.js",
+	"main": "index.ts",
 	"author": "Faisal Arshed",
 	"license": "MIT",
 	"dependencies": {
