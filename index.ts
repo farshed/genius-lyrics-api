@@ -1,5 +1,5 @@
-import getLyrics from './src/GetLyrics';
-import searchLyrics from './src/SearchLyrics';
-import getLyricsFromPath from './src/GetLyricsFromPath';
+import getLyrics from './lib/GetLyrics';
+import searchLyrics from './lib/SearchLyrics';
+import getLyricsFromPath from './lib/GetLyricsFromPath';
 
 export default { getLyrics, getLyricsFromPath, searchLyrics };
