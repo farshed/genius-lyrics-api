@@ -1,6 +1,6 @@
 # genius-lyrics-api [![npm version](https://img.shields.io/npm/v/genius-lyrics-api.svg?style=flat)](https://www.npmjs.com/package/genius-lyrics-api)
 
-A package that provides a convenient wrapper around [Genius API](https://genius.com/developers) for searching and scraping song lyrics. genius-lyrics-api doesn't use any native node modules so it should also work with front-end libraries like ReactJS & React Native.
+A package that provides a convenient wrapper around [Genius API](https://genius.com/developers) for searching and scraping song lyrics.<br/>genius-lyrics-api doesn't use any native node modules so it should also work with front-end libraries like ReactJS & React Native.
 
 ## Installation
 
@@ -40,7 +40,7 @@ genius-lyrics-api exports three methods:
 
 ### `getLyrics(options)`
 
-Automatically get the lyrics from genius.com using the `title` & `artist` fields.
+Automatically get the lyrics from genius.com using the `title` & `artist` fields.<br/>
 Returns a promise that resolves to a string containing lyrics. Throws an error if lyrics are not found.
 
 #### Arguments
