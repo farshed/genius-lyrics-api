@@ -11,5 +11,13 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/farshed/genius-lyrics-api.git"
-	}
+	},
+	"keywords": [
+		"genius",
+		"lyrics",
+		"scraper",
+		"genius-lyrics",
+		"genius-api",
+		"lyrics-scraper"
+	]
 }
