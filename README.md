@@ -1,8 +1,8 @@
 # genius-lyrics-api [![npm version](https://img.shields.io/npm/v/react-native-quick-scroll.svg?style=flat)](https://www.npmjs.com/package/react-native-quick-scroll)
 
-This package provides a convenient wrapper around Genius API for searching song lyrics. It also scrapes lyrics directly from genius.com
+This package provides a convenient wrapper around [Genius API]() for searching song lyrics. It also scrapes lyrics directly from genius.com. genius-lyrics-api doesn't use any native node modules so it should work also with front-end libraries (ReactJS/React Native etc.).
 
-# Installation
+## Installation
 
 Install with npm
 
@@ -16,45 +16,54 @@ Or install with Yarn
 yarn add genius-lyrics-api
 ```
 
-# Usage
+## Usage
 
 ```js
-import { getLyrics, getLyricsFromPath, searchLyrics } from 'genius-lyrics-api';
+import { getLyrics } from 'genius-lyrics-api';
 ```
+
+```js
+
+const options = {
+  apiKey: 'XXXXXXXXXXXXXXXXXXXXXXX';
+	title: 'Fallen';
+	artist: 'Gert Taberner';
+	optimizeQuery: true;
+};
+
+getLyrics(options).then(lyrics => console.log(lyrics));
+```
+
+## Methods
+
+genius-lyrics-api exports three methods:
+
+### `getLyrics(options)`
+
+Automatically get the lyrics from genius.com using the `title` & `artist` fields.
+Returns a promise that resolves to a string containing lyrics. Throws an error if lyrics are not found.
+
+#### Arguments
 
 ```js
 const options = {
-  apiKey: string;
-	title: string;
-	artist: string;
-	optimizeQuery: boolean;
+	apiKey: string, // Genius Developer API key
+	title: string, // Title of the song
+	artist: string, // Name of the artist
+	optimizeQuery: boolean // Whether to clean `title` & `artist` before searching. `false` by default.
 };
-
-getLyrics(options);
 ```
 
-# Props
+All properties in the `lyricsOptions` object are required except `optimizeQuery`. If either of the `title` or `artist` is unknown, pass an empty string as its value.
 
-Inherits all valid [FlatList props](https://facebook.github.io/react-native/docs/flatlist#props), except `ref` and `showsVerticalScrollIndicator`. Also accepts the following props:
+### `searchLyrics(options)`
 
-| Prop               | Type     | Default Value      | Description                                                                                          | Required |
-| ------------------ | -------- | ------------------ | ---------------------------------------------------------------------------------------------------- | -------- |
-| `itemHeight`       | `number` |                    | Height of an item in the FlatList                                                                    | Yes      |
-| `viewportHeight`   | `number` |                    | Height of the FlatList area visible on screen at a given time                                        | Yes      |
-| `thumbHeight`      | `number` | `80`               | Height of the scroll bar thumb                                                                       | No       |
-| `touchAreaWidth`   | `number` | `25`               | Width of the touchable area around thumb                                                             | No       |
-| `flashDuration`    | `number` | `40`               | The time taken by the animation to move scroll bar on-screen after the scroll has begun (in ms)      | No       |
-| `flashOutDuration` | `number` | `1500`             | The time after which scroll bar disappears (in ms)                                                   | No       |
-| `rightOffset`      | `number` | `15`               | The distance of the scroll bar from the right edge of screen                                         | No       |
-| `thumbStyle`       | `object` |                    | Style object for the scroll bar thumb (Don't pass `height` here, use the `thumbHeight` prop instead) | No       |
-| `scrollbarStyle`   | `object` |                    | Style object for the scroll bar                                                                      | No       |
-| `containerStyle`   | `object` |                    | Style object for the parent container                                                                | No       |
-| `hiddenPosition`   | `number` | `ScreenWidth + 15` | The off-screen position where the scroll bar thumb moves to after `flashOutDuration`                 | No       |
+Search lyrics from genius.com using the `title` & `artist` fields.
+Returns a promise that resolves to an array of search results. Throws an error if no matches are found.
 
+Receives the same arguments as `getLyrics`.
 
-# Todo (PRs welcome!)
+### `getLyricsFromPath(path: string)`
 
-- [x] Add native driver support
-- [ ] Implement with [react-native-interactable](https://github.com/wix/react-native-interactable) for better performance
-- [ ] Rewrite with TypeScript
-- [ ] Add support for FlatList ref
+Get the lyrics of a song using the `path` property present in the search results of `searchLyrics` method.
+Returns a promise that resolves to a string containing lyrics.
