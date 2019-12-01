@@ -26,8 +26,8 @@ import { getLyrics } from 'genius-lyrics-api';
 
 const options = {
 	apiKey: 'XXXXXXXXXXXXXXXXXXXXXXX';
-	title: 'Fallen';
-	artist: 'Gert Taberner';
+	title: 'Blinding Lights';
+	artist: 'The Weeknd';
 	optimizeQuery: true;
 };
 
