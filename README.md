@@ -25,10 +25,10 @@ import { getLyrics } from 'genius-lyrics-api';
 ```js
 
 const options = {
-	apiKey: 'XXXXXXXXXXXXXXXXXXXXXXX';
-	title: 'Blinding Lights';
-	artist: 'The Weeknd';
-	optimizeQuery: true;
+	apiKey: 'XXXXXXXXXXXXXXXXXXXXXXX',
+	title: 'Blinding Lights',
+	artist: 'The Weeknd',
+	optimizeQuery: true
 };
 
 getLyrics(options).then(lyrics => console.log(lyrics));
