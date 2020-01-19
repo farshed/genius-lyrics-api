@@ -47,7 +47,7 @@ Returns a promise that resolves to a string containing lyrics. Throws an error i
 
 ```js
 const options = {
-	apiKey: string, // Genius Developer API key
+	apiKey: string, // Genius Developer API key/Access Token
 	title: string, // Title of the song
 	artist: string, // Name of the artist
 	optimizeQuery: boolean // Whether to clean `title` & `artist` before searching. `false` by default.
