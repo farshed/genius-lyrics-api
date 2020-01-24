@@ -16,6 +16,6 @@ export default async function(options: params) {
 		if (lyrics.length > 3000) noLyricsError();
 		return lyrics;
 	} catch (e) {
-		return e;
+		throw e;
 	}
 }

@@ -32,6 +32,6 @@ export default async function({ apiKey, title, artist, optimizeQuery = false }: 
 		});
 		return results;
 	} catch (e) {
-		return e;
+		throw e;
 	}
 }

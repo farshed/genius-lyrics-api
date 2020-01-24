@@ -9,7 +9,7 @@ export default async function(path: string) {
 		const lyricsUrl = baseUrl + path;
 		var { data } = await axios.get(lyricsUrl);
 	} catch (e) {
-		return e;
+		throw e;
 	}
 	const $ = cio.load(data);
 	const selector = $('div[class="lyrics"]');
