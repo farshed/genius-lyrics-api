@@ -25,7 +25,7 @@ import { getLyrics } from 'genius-lyrics-api';
 ```js
 
 const options = {
-	apiKey: 'XXXXXXXXXXXXXXXXXXXXXXX',
+	apiKey: 'XXXXXXXXXXXXXXXXXXXXXXX',  // genius developer access token
 	title: 'Blinding Lights',
 	artist: 'The Weeknd',
 	optimizeQuery: true
