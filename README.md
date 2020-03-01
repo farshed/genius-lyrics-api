@@ -1,6 +1,8 @@
 # genius-lyrics-api [![npm version](https://img.shields.io/npm/v/genius-lyrics-api.svg?style=flat)](https://www.npmjs.com/package/genius-lyrics-api)
 
-A package that provides a convenient wrapper around [Genius API](https://genius.com/developers) for searching and scraping song lyrics.<br/>It doesn't use any native node dependencies so it should work fine with front-end libraries like ReactJS & React Native.
+A package that provides a convenient wrapper around [Genius API](https://genius.com/developers) for searching and scraping song lyrics.<br/>It doesn't use any native node dependencies and thus, can be used with any frontend frameworks/lib.
+
+> :warning: **If you're using this in a frontend web app and testing on localhost,** you might get a CORS block error. To bypass this, you need to disable Same-Origin Policy in your browser. Follow the instructions [here](https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome).
 
 ## Installation
 
