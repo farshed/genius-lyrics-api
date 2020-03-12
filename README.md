@@ -73,3 +73,7 @@ Receives the same arguments as `getLyrics`.
 
 Get the lyrics of a song using the `path` property present in the search results of `searchLyrics` method.<br/>
 Returns a promise that resolves to a string containing lyrics.
+
+## Support
+
+If you found this package useful, hit the ⭐️ button. Cheers!
