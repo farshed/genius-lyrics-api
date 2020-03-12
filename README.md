@@ -76,4 +76,4 @@ Returns a promise that resolves to a string containing lyrics.
 
 ## Support
 
-If you found this package useful, hit the ⭐️ button. Cheers!
+If you find this package useful, hit the ⭐️ button. Cheers!
