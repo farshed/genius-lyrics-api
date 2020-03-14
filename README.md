@@ -36,7 +36,7 @@ getLyrics(options).then(lyrics => console.log(lyrics));
 ```
 <br>
 
-> :warning: **If you're using this in a frontend web app and testing on localhost,** you might get a CORS block error. To bypass this, you need to disable Same-Origin Policy in your browser. Follow the instructions [here](https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome).
+> :warning: You may get a CORS block error while testing on localhost. To bypass this, you need to disable Same-Origin Policy in your browser. Follow the instructions [here](https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome).
 
 <br>
 
