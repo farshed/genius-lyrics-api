@@ -54,12 +54,12 @@ Returns a promise that resolves to a string containing lyrics. Returns `null` if
 ### `getAlbumArt(options)`
 
 Automatically get the albumArt from genius.com using the `title` & `artist` fields.<br/>
-Returns a promise that resolves to a string containing a url. Returns `null` if no lyrics are found.
+Returns a promise that resolves to a string containing a url. Returns `null` if no url is found.
 
 ### `getSong(options)`
 
 Automatically gets both the lyrics and albumArt from genius.com using the `title` & `artist` fields.<br/>
-Returns a promise that resolves to a array containing the lyrics and the album art url in the format of `[lyrics, url]`. Array element equals `null` if no lyrics or urls are found.
+Returns a promise that resolves to a object containing the lyrics and the album art url which can be retrieved with `object.lyrics` and `object.albumArt`. Object value equals `null` if no lyrics or urls are found.
 
 #### Arguments
 
