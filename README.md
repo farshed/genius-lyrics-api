@@ -92,21 +92,6 @@ Returns a promise that resolves to a string containing lyrics.
 Get the album art url of a song using the `path` property present in the search results of `searchLyrics` method.<br/>
 Returns a promise that resolves to a string containing a url.
 
-### `getData(path: string)`
-
-Get the lyrics of a song using the `path` property present in the search results of `searchLyrics` method.<br/>
-Returns a promise that resolves to a string containing html data.
-
-### `getLyricsFromHtml(data: string)`
-
-Get the lyrics of a song using the `data` property present in the search results of `getData` method.<br/>
-Returns a promise that resolves to a string containing lyrics.
-
-### `getAlbumArtFromHtml(data: string)`
-
-Get the album art url of a song using the `data` property present in the search results of `getData` method.<br/>
-Returns a promise that resolves to a string containing a url.
-
 ## Support
 
 If you find this package useful, hit the ⭐️ button. Cheers!
