@@ -34,6 +34,7 @@ const options = {
 };
 
 getLyrics(options).then(lyrics => console.log(lyrics));
+getSong(options).then(data => console.log(`${data.lyrics}\n\n${data.albumArt}`));
 ```
 
 <br>
@@ -50,6 +51,16 @@ genius-lyrics-api exposes the following methods:
 
 Automatically get the lyrics from genius.com using the `title` & `artist` fields.<br/>
 Returns a promise that resolves to a string containing lyrics. Returns `null` if no lyrics are found.
+
+### `getAlbumArt(options)`
+
+Automatically get the albumArt from genius.com using the `title` & `artist` fields.<br/>
+Returns a promise that resolves to a string containing a url. Returns `null` if no url is found.
+
+### `getSong(options)`
+
+Automatically gets both the lyrics and albumArt from genius.com using the `title` & `artist` fields.<br/>
+Returns a promise that resolves to a object containing the lyrics and the album art url which can be retrieved with `object.lyrics` and `object.albumArt`. Object value equals `null` if no lyrics or urls are found.
 
 #### Arguments
 
@@ -75,6 +86,11 @@ Receives the same arguments as `getLyrics`.
 
 Get the lyrics of a song using the `path` property present in the search results of `searchLyrics` method.<br/>
 Returns a promise that resolves to a string containing lyrics.
+
+### `getAlbumArtFromPath(path: string)`
+
+Get the album art url of a song using the `path` property present in the search results of `searchLyrics` method.<br/>
+Returns a promise that resolves to a string containing a url.
 
 ## Support
 
