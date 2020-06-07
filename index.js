@@ -1,3 +1,5 @@
-exports.getLyrics = require('./lib/GetLyrics');
-exports.getLyricsFromPath = require('./lib/GetLyricsFromPath');
-exports.searchLyrics = require('./lib/SearchLyrics');
+exports.getLyrics = require('./lib/getLyrics');
+exports.getAlbumArt = require('./lib/getAlbumArt');
+exports.getSong = require('./lib/getSong');
+exports.searchSong = require('./lib/searchSong');
+exports.getSongFromPath = require('./lib/getSongFromPath');
