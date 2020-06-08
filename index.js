@@ -10,4 +10,4 @@ const options = {
 	artist: 'The Weeknd',
 	apiKey: 'xGUkuEImvLYnfrvUptFJGdbXeEee6Bn4ul8li5nwH7QNl3gETByg5N3GMgQEbHXg'
 };
-search();
+search(378195, options.apiKey);
