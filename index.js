@@ -2,4 +2,4 @@ exports.getLyrics = require('./lib/getLyrics');
 exports.getAlbumArt = require('./lib/getAlbumArt');
 exports.getSong = require('./lib/getSong');
 exports.searchSong = require('./lib/searchSong');
-exports.getSongFromId = require('./lib/getSongFromId');
+exports.getSongById = require('./lib/getSongById');
