@@ -92,15 +92,15 @@ genius-lyrics-api exposes the following methods:
 Accepts [options](#types) or the url to a Genius song. <br/>
 Returns a promise that resolves to a string containing lyrics. Returns `null` if no lyrics are found.
 
-### `getSong(options)`
-
-Accepts an [options](#types) object. <br/>
-Returns a promise that resolves to an object of type [song](#types). Returns `null` if song is not found.
-
 ### `getAlbumArt(options)`
 
 Accepts an [options](#types) object. <br/>
 Returns a promise that resolves to a string containing a url to the song's album art. Returns `null` if no url is found.
+
+### `getSong(options)`
+
+Accepts an [options](#types) object. <br/>
+Returns a promise that resolves to an object of type [song](#types). Returns `null` if song is not found.
 
 ### `searchSong(options)`
 
