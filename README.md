@@ -57,7 +57,7 @@ type options {
 	title: string;
 	artist: string;
 	apiKey: string;		// Genius developer access token
-	optimizeQuery?: boolean;	// Setting this to true will optimize the query for best results
+	optimizeQuery?: boolean; // Setting this to true will optimize the query for best results
 }
 
 ```
