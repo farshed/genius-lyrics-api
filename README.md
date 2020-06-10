@@ -1,6 +1,6 @@
 # genius-lyrics-api [![npm version](https://img.shields.io/npm/v/genius-lyrics-api.svg?style=flat)](https://www.npmjs.com/package/genius-lyrics-api)
 
-A package that leverages [Genius API](https://genius.com/developers) to search and fetch/scrape song lyrics and album art.<br/>It doesn't use any native node dependencies and thus, can be used on the client-side.
+A package that leverages [Genius API](https://genius.com/developers) to search and fetch/scrape song lyrics and album art.<br/>It doesn't use any native node dependencies and therefore, can be used on the client-side.
 
 ## Installation
 
@@ -56,19 +56,19 @@ getSong(options).then((song) =>
 type options {
 	title: string;
 	artist: string;
-	apiKey: string;					 // Genius developer access token
+	apiKey: string;	// Genius developer access token
 	optimizeQuery?: boolean; // Setting this to true will optimize the query for best results
 }
 
 ```
 
-All properties in the options object are required except `optimizeQuery`. If `title` or `artist` is unknown, pass an empty string.
+🚨 All properties in the options object are required except `optimizeQuery`. If `title` or `artist` is unknown, pass an empty string.
 
 ```
 type song {
-	id: number; 			// Genius song id
-	url: string; 			// Genius webpage URL for the song
-	lyrics: string;		// Song lyrics
+	id: number; // Genius song id
+	url: string; // Genius webpage URL for the song
+	lyrics: string; // Song lyrics
 	albumArt: string; // URL of the album art image (jpg/png)
 }
 
@@ -76,10 +76,10 @@ type song {
 
 ```
 type searchResult {
-	id: number;				// Genius song id
-	url: string;			// Genius webpage URL for the song
-	title: string;		// Song title
-	albumArt: string;	// URL of the album art image (jpg/png)
+	id: number;	// Genius song id
+	url: string; // Genius webpage URL for the song
+	title: string; // Song title
+	albumArt: string; // URL of the album art image (jpg/png)
 }
 ```
 
@@ -109,7 +109,7 @@ Returns a promise that resolves to an object of type [searchResult](#types). Ret
 
 ### `getSongById(id: (number | string))`
 
-Accepts a valid Genius song id. IDs can be found using the `searchSong` method. <br/>
+Accepts a valid Genius song ID. IDs can be found using the `searchSong` method. <br/>
 Returns a promise that resolves to an object of type [song](#types).
 
 ## Support
