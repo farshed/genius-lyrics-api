@@ -56,8 +56,8 @@ getSong(options).then((song) =>
 type options {
 	title: string;
 	artist: string;
-	apiKey: string;	// Genius developer access token
-	optimizeQuery?: boolean; // Setting this to true will optimize the query for best results
+	apiKey: string;		// Genius developer access token
+	optimizeQuery?: boolean;	// Setting this to true will optimize the query for best results
 }
 
 ```
@@ -66,10 +66,10 @@ type options {
 
 ```
 type song {
-	id: number; // Genius song id
-	url: string; // Genius webpage URL for the song
-	lyrics: string; // Song lyrics
-	albumArt: string; // URL of the album art image (jpg/png)
+	id: number;		// Genius song id
+	url: string;		// Genius webpage URL for the song
+	lyrics: string;		// Song lyrics
+	albumArt: string;	// URL of the album art image (jpg/png)
 }
 
 ```
