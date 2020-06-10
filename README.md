@@ -1,6 +1,6 @@
 # genius-lyrics-api [![npm version](https://img.shields.io/npm/v/genius-lyrics-api.svg?style=flat)](https://www.npmjs.com/package/genius-lyrics-api)
 
-A package that provides a convenient wrapper around [Genius API](https://genius.com/developers) for searching and scraping song lyrics.<br/>It doesn't use any native node dependencies and thus, can be used on the frontend.
+A package that leverages [Genius API](https://genius.com/developers) to search and fetch/scrape song lyrics and album art.<br/>It doesn't use any native node dependencies and thus, can be used on the client-side.
 
 ## Installation
 
@@ -27,71 +27,91 @@ import { getLyrics } from 'genius-lyrics-api';
 
 ```js
 const options = {
-	apiKey: 'XXXXXXXXXXXXXXXXXXXXXXX', // genius developer access token
+	apiKey: 'XXXXXXXXXXXXXXXXXXXXXXX',
 	title: 'Blinding Lights',
 	artist: 'The Weeknd',
 	optimizeQuery: true
 };
 
-getLyrics(options).then(lyrics => console.log(lyrics));
-getSong(options).then(data => console.log(`${data.lyrics}\n\n${data.albumArt}`));
+getLyrics(options).then((lyrics) => console.log(lyrics));
+
+getSong(options).then((song) =>
+	console.log(`
+	${song.id}
+	${song.url}
+	${song.albumArt}
+	${song.lyrics}`)
+);
 ```
 
 <br>
 
-> :warning: You may get a CORS block error while testing on localhost. To bypass this, you need to disable Same-Origin Policy in your browser. Follow the instructions [here](https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome).
+> :warning: You may get a CORS block error while testing on localhost. To bypass this, you need to disable Same-Origin Policy in your browser. You may follow the instructions [here](https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome).
 
 <br>
+
+## Types
+
+```
+type options {
+	title: string;
+	artist: string;
+	apiKey: string;					 // Genius developer access token
+	optimizeQuery?: boolean; // Setting this to true will optimize the query for best results
+}
+
+```
+
+All properties in the options object are required except `optimizeQuery`. If `title` or `artist` is unknown, pass an empty string.
+
+```
+type song {
+	id: number; 			// Genius song id
+	url: string; 			// Genius webpage URL for the song
+	lyrics: string;		// Song lyrics
+	albumArt: string; // URL of the album art image (jpg/png)
+}
+
+```
+
+```
+type searchResult {
+	id: number;				// Genius song id
+	url: string;			// Genius webpage URL for the song
+	title: string;		// Song title
+	albumArt: string;	// URL of the album art image (jpg/png)
+}
+```
 
 ## Methods
 
 genius-lyrics-api exposes the following methods:
 
-### `getLyrics(options)`
+### `getLyrics(options | url)`
 
-Automatically get the lyrics from genius.com using the `title` & `artist` fields.<br/>
+Accepts [options](#types) or the url to a Genius song. <br/>
 Returns a promise that resolves to a string containing lyrics. Returns `null` if no lyrics are found.
-
-### `getAlbumArt(options)`
-
-Automatically get the albumArt from genius.com using the `title` & `artist` fields.<br/>
-Returns a promise that resolves to a string containing a url. Returns `null` if no url is found.
 
 ### `getSong(options)`
 
-Automatically gets both the lyrics and albumArt from genius.com using the `title` & `artist` fields.<br/>
-Returns a promise that resolves to a object containing the lyrics and the album art url which can be retrieved with `object.lyrics` and `object.albumArt`. Object value equals `null` if no lyrics or urls are found.
+Accepts an [options](#types) object. <br/>
+Returns a promise that resolves to an object of type [song](#types). Returns `null` if song is not found.
 
-#### Arguments
+### `getAlbumArt(options)`
 
-```js
-const options = {
-	apiKey: string, // Genius Developer API key/Access Token
-	title: string, // Title of the song
-	artist: string, // Name of the artist
-	optimizeQuery: boolean // Whether to remove redundant words from "title" & "artist" before searching. "false" by default.
-};
-```
+Accepts an [options](#types) object. <br/>
+Returns a promise that resolves to a string containing a url to the song's album art. Returns `null` if no url is found.
 
-All properties in the `options` object are required except `optimizeQuery`. If either of the `title` or `artist` is unknown, pass an empty string as its value.
+### `searchSong(options)`
 
-### `searchLyrics(options)`
+Accepts an [options](#types) object. <br/>
+Returns a promise that resolves to an object of type [searchResult](#types). Returns `null` if no matches are found.
 
-Search lyrics from genius.com using the `title` & `artist` fields.<br/>
-Returns a promise that resolves to an array of search results. Returns `null` if no matches are found.
+### `getSongById(id: (number | string))`
 
-Receives the same arguments as `getLyrics`.
-
-### `getLyricsFromPath(path: string)`
-
-Get the lyrics of a song using the `path` property present in the search results of `searchLyrics` method.<br/>
-Returns a promise that resolves to a string containing lyrics.
-
-### `getAlbumArtFromPath(path: string)`
-
-Get the album art url of a song using the `path` property present in the search results of `searchLyrics` method.<br/>
-Returns a promise that resolves to a string containing a url.
+Accepts a valid Genius song id. IDs can be found using the `searchSong` method. <br/>
+Returns a promise that resolves to an object of type [song](#types).
 
 ## Support
 
-If you find this package useful, hit the ⭐️ button. Cheers!
+If you find this package useful, hit that sweet sweet ⭐️ button.
