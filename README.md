@@ -22,7 +22,7 @@ yarn add genius-lyrics-api
 <br>
 
 ```js
-import { getLyrics } from 'genius-lyrics-api';
+import { getLyrics, getSong } from 'genius-lyrics-api';
 ```
 
 ```js
