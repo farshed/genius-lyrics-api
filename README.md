@@ -95,7 +95,7 @@ Returns a promise that resolves to a string containing lyrics. Returns `null` if
 ### `getAlbumArt(options)`
 
 Accepts an [options](#types) object. <br/>
-Returns a promise that resolves to a string containing a url to the song's album art. Returns `null` if no url is found.
+Returns a promise that resolves to a url (string) to the song's album art. Returns `null` if no url is found.
 
 ### `getSong(options)`
 
@@ -110,7 +110,7 @@ Returns a promise that resolves to an object of type [searchResult](#types). Ret
 ### `getSongById(id: (number | string))`
 
 Accepts a valid Genius song ID. IDs can be found using the `searchSong` method. <br/>
-Returns a promise that resolves to an object of type [song](#types).
+Returns a promise that resolves to an array of type [song](#types).
 
 ## Support
 
