@@ -105,7 +105,7 @@ Returns a promise that resolves to an object of type [song](#types). Returns `nu
 ### `searchSong(options)`
 
 Accepts an [options](#types) object. <br/>
-Returns a promise that resolves to an object of type [searchResult](#types). Returns `null` if no matches are found.
+Returns a promise that resolves to an array of type [searchResult](#types). Returns `null` if no matches are found.
 
 ### `getSongById(id: (number | string))`
 
