@@ -110,7 +110,7 @@ Returns a promise that resolves to an array of type [searchResult](#types). Retu
 ### `getSongById(id: (number | string))`
 
 Accepts a valid Genius song ID. IDs can be found using the `searchSong` method. <br/>
-Returns a promise that resolves to an array of type [song](#types).
+Returns a promise that resolves to an object of type [song](#types).
 
 ## Support
 
