@@ -1,6 +1,6 @@
 # genius-lyrics-api [![npm version](https://img.shields.io/npm/v/genius-lyrics-api.svg?style=flat)](https://www.npmjs.com/package/genius-lyrics-api)
 
-A JavaScript package that leverages [Genius API](https://genius.com/developers) to search and fetch/scrape song lyrics and album art.<br/>It doesn't use any native node dependencies and therefore, can be used on the client-side.
+A JavaScript package that leverages [Genius API](https://genius.com/developers) to search and fetch song lyrics and album art.<br/>It doesn't use any native node dependencies and therefore, can be used on the client-side.
 
 ## Installation
 
