@@ -30,8 +30,7 @@ const options = {
 	apiKey: 'XXXXXXXXXXXXXXXXXXXXXXX',
 	title: 'Blinding Lights',
 	artist: 'The Weeknd',
-	optimizeQuery: true,
-	authHeader: false
+	optimizeQuery: true
 };
 
 getLyrics(options).then((lyrics) => console.log(lyrics));
