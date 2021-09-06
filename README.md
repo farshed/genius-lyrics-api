@@ -30,7 +30,8 @@ const options = {
 	apiKey: 'XXXXXXXXXXXXXXXXXXXXXXX',
 	title: 'Blinding Lights',
 	artist: 'The Weeknd',
-	optimizeQuery: true
+	optimizeQuery: true,
+	authHeader: false
 };
 
 getLyrics(options).then((lyrics) => console.log(lyrics));
@@ -58,11 +59,12 @@ type options {
 	artist: string;
 	apiKey: string;		// Genius developer access token
 	optimizeQuery?: boolean; // Setting this to true will optimize the query for best results
+	authHeader?: boolean; // Whether to include auth header in the search request. 'false' by default.
 }
 
 ```
 
-🚨 All properties in the options object are required except `optimizeQuery`. If `title` or `artist` is unknown, pass an empty string.
+🚨 All properties in the options object are required except `optimizeQuery` and `authHeader`. If `title` or `artist` is unknown, pass an empty string.
 
 ```
 type song {
