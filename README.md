@@ -38,6 +38,7 @@ getLyrics(options).then((lyrics) => console.log(lyrics));
 getSong(options).then((song) =>
 	console.log(`
 	${song.id}
+	${song.title}
 	${song.url}
 	${song.albumArt}
 	${song.lyrics}`)
@@ -68,6 +69,7 @@ type options {
 ```
 type song {
 	id: number;		// Genius song id
+	title: string;          // Song title
 	url: string;		// Genius webpage URL for the song
 	lyrics: string;		// Song lyrics
 	albumArt: string;	// URL of the album art image (jpg/png)
