@@ -1,6 +1,6 @@
 # genius-lyrics-api [![npm version](https://img.shields.io/npm/v/genius-lyrics-api.svg?style=flat)](https://www.npmjs.com/package/genius-lyrics-api)
 
-A JavaScript package that leverages [Genius API](https://genius.com/developers) to search and fetch song lyrics and album art.<br/>It doesn't use any native node dependencies and therefore, can be used on the client-side.
+A Node.js package that leverages [Genius API](https://genius.com/developers) to search and fetch song lyrics and album art.<br/>
 
 ## Installation
 
@@ -44,10 +44,6 @@ getSong(options).then((song) =>
 	${song.lyrics}`)
 );
 ```
-
-<br>
-
-> :warning: You may get a CORS block error while testing on localhost. To bypass this, you need to disable Same-Origin Policy in your browser. You may follow the instructions [here](https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome).
 
 <br>
 
@@ -114,7 +110,3 @@ Returns a promise that resolves to an array of type [searchResult](#types). Retu
 
 Accepts a valid Genius song ID. IDs can be found using the `searchSong` method. <br/>
 Returns a promise that resolves to an object of type [song](#types).
-
-## Support
-
-If you find this package useful, hit that sweet sweet ⭐️ button.
