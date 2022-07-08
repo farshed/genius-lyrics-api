@@ -106,7 +106,7 @@ Returns a promise that resolves to an object of type [song](#types). Returns `nu
 Accepts an [options](#types) object. <br/>
 Returns a promise that resolves to an array of type [searchResult](#types). Returns `null` if no matches are found.
 
-### `getSongById(id: (number | string))`
+### `getSongById(id: (number | string), access_token: string)`
 
 Accepts a valid Genius song ID. IDs can be found using the `searchSong` method. <br/>
 Returns a promise that resolves to an object of type [song](#types).
