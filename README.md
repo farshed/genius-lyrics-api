@@ -1,6 +1,6 @@
 # genius-lyrics-api [![npm version](https://img.shields.io/npm/v/genius-lyrics-api.svg?style=flat)](https://www.npmjs.com/package/genius-lyrics-api)
 
-A JavaScript package for non-browser environments that leverages [Genius API](https://genius.com/developers) to search and scrape song lyrics and album art.<br/>
+A JavaScript package for non-browser environments that leverages [Genius API](https://genius.com/developers) to find (and scrape) song lyrics and album covers.<br/>
 
 ## Installation
 
@@ -28,20 +28,15 @@ import { getLyrics, getSong } from 'genius-lyrics-api';
 ```js
 const options = {
 	apiKey: 'XXXXXXXXXXXXXXXXXXXXXXX',
-	title: 'Blinding Lights',
-	artist: 'The Weeknd',
+	title: 'Posthumous Forgiveness',
+	artist: 'Tame Impala',
 	optimizeQuery: true
 };
 
 getLyrics(options).then((lyrics) => console.log(lyrics));
 
 getSong(options).then((song) =>
-	console.log(`
-	${song.id}
-	${song.title}
-	${song.url}
-	${song.albumArt}
-	${song.lyrics}`)
+	console.log(`${song.id} - ${song.title} - ${song.url} - ${song.albumArt} - ${song.lyrics}`)
 );
 ```
 
@@ -54,13 +49,13 @@ type options {
 	title: string;
 	artist: string;
 	apiKey: string;		// Genius developer access token
-	optimizeQuery?: boolean; // Setting this to true will optimize the query for best results
-	authHeader?: boolean; // Whether to include auth header in the search request. 'false' by default.
+	optimizeQuery?: boolean; // (optional, default: false) If true, Perform some cleanup to maximize the chance of finding a match
+	authHeader?: boolean; // (optional, default: false) Whether to include auth header in the search request
 }
 
 ```
 
-🚨 All properties in the options object are required except `optimizeQuery` and `authHeader`. If `title` or `artist` is unknown, pass an empty string.
+🚨 If `title` or `artist` is unknown, pass an empty string.
 
 ```
 type song {
