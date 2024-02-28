@@ -14,7 +14,7 @@
 	],
 	"license": "MIT",
 	"dependencies": {
-		"axios": "^0.27.2",
+		"axios": "^1.6.7",
 		"cheerio-without-node-native": "0.20.2"
 	},
 	"repository": {
