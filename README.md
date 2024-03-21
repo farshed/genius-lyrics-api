@@ -52,27 +52,29 @@ type options {
 	apiKey: string;		// Genius developer access token
 	optimizeQuery?: boolean; // (optional, default: false) If true, perform some cleanup to maximize the chance of finding a match
 	authHeader?: boolean; // (optional, default: false) Whether to include auth header in the search request,
-	onlyText: boolean; //(optional, default: true) whether to return the lyrics in Text or html format(needs sanitizing in DOM to remove conflicts, then you can style it accordingly){
-		for example:
-			const lyricsA = document.querySelectorAll("div a");
-    		const lyricsaSpan = document.querySelectorAll("div a span");
-    		const lyricsSpan = document.querySelectorAll("div span");
+	onlyText: boolean; //(optional, default: true) whether to return the lyrics in Text or html format(needs sanitizing in DOM to remove conflicts, then you can style it accordingly)
+}
 
-			for(i=0; i <= lyricsTag.length; i++){
-				lyricsA[i].removeAttribute("href");
-				lyricsA[i].removeAttribute("class");
-			};
+To sanitize the returned lyrics in html format, you can do this:
+{
+	const lyricsTag = document.querySelectorAll("div a");
+    const lyricskek = document.querySelectorAll("div a span");
+    const lyricslol = document.querySelectorAll("div span");
 
-			for(i=0; i <= lyricskek.length; i++){
-				lyricsaSpan[i].removeAttribute("style");
-				lyricsaSpan[i].removeAttribute("class");
-			};
+    for(i=0; i <= lyricsTag.length; i++){
+        lyricsTag[i].removeAttribute("href");
+        lyricsTag[i].removeAttribute("class");
+    };
 
-			for(i=0; i <= lyricslol.length; i++){
-				lyricsSpan[i].removeAttribute("style");
-				lyricsSpan[i].removeAttribute("class");
-			};
-	}
+    for(i=0; i <= lyricskek.length; i++){
+        lyricskek[i].removeAttribute("style");
+        lyricskek[i].removeAttribute("class");
+    };
+
+    for(i=0; i <= lyricslol.length; i++){
+        lyricslol[i].removeAttribute("style");
+        lyricslol[i].removeAttribute("class");
+    };
 }
 
 ```
